@@ -1039,6 +1039,9 @@ class FakeStrictRedis(object):
         self._db[dest] = set(to_bytes(x) for x in union)
         return len(union)
 
+    def time(self):
+        return str(time.time()).split('.')
+
     def _get_zelement_range_filter_func(self, min_val, max_val):
         # This will return a filter function based on the
         # min and max values.  It takes a single argument
